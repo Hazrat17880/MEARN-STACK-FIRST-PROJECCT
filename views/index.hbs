@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <title>Dynamic Website using nodejs</title>
+</head>
+
+<body>
+  {{>navbar data=details}}
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+
+  {{>slider slides = slides}}
+
+
+
+
+
+
+
+  {{!-- {{ -- Services Section -----}}
+  <div id="services_section" class="py-5 mb-5">
+    <div class="container">
+      <h1 class="text-center text-secondary">Services That We Provide</h1>
+      <div class="row mt-5">
+
+        {{!-- first services --}}
+
+        {{#each servicess}}
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <div class="container py-3">
+                <i class="{{this.icon}}"></i>
+              </div>
+              <h5 class="card-title">{{this.title}}</h5>
+              <p>{{this.description}}</p>
+
+              <a href="{{this.linkstext}}">{{this.link}}</a>
+              <a href="#!" class="ml-3">Support</a>
+            </div>
+
+          </div>
+
+        </div>
+        {{/each}}
+
+
+
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+  </div>
+
+
+
+  {{!-- Contact Us Section --}}
+  <div id="contact_us_section" class="background1">
+    <div class="container">
+      <h3 class="text-center text-secondary">Contact Us</h3>
+      <div class="row">
+        <div class="col-md-12">
+          <form action="/proces-contact-form" method="post">
+            <div class="mb-1">
+              <label for="exampleInputEmail1" class="form-label">Your Email address</label>
+              <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your Email Address" required>
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+
+
+            <div class="mb-3">
+              <label for="contact_number" class="form-label">Your Contact number</label>
+              <input type="number" name="phone" class="form-control" id="contact_number" placeholder="Enter your contact number" required>
+
+            </div>
+
+            <div class="form-floating my-3">
+              <textarea style="height: 150px;" name="query" class="form-control" placeholder="Enter your query here" id="queryField"></textarea>
+              <label for="queryField">Enter your query here....</label>
+            </div>
+            <div class="container text-center my-3">
+              <button type="submit" class="btn btn-dark">Submit</button>
+
+            </div>
+
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
